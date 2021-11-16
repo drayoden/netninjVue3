@@ -12,3 +12,10 @@
     - suspense component - handles async, provide fallback content i.e. spinner, progress bar, etc.
     - typescript support - optional
   - vscode: liveserver, vetur (Vue tooling), material icons (optional)
+- 02 - basics part 1
+  - use the CDN to insert/inject a component into a site, see docs
+  - creating a vue app
+  - data and templates
+  - click events
+  - conditional rendering, see showBooks, v-if, v-else, v-show directives, etc. (expensive)
+    - v-if,v-else removes/injects to the DOM as needed, v-show uses css (display: none;) to hide an element (less expensive)

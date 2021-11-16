@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Vue</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <h1>Hello Vuejs!</h1>
+
+    <!-- this is where the Vue app will be rendered, see app.js, "mount" -->
+    <div id="app">
+        
+        <!-- v-if directive (conditional) -->
+        <div v-if="showBooks">
+            <p>{{ title }} -- {{ author }} -- {{ age }}</p> 
+        </div>
+        
+        <!-- v-if, v-else -->
+        <button @click="tBooks">
+            <span v-if="showBooks">Hide</span>
+            <!-- <span v-if="!showBooks">Show</span> -->
+            <span v-else>Show</span>
+        </button>
+
+        <!-- v-on is a 'directive' using the click event -->
+        <button v-on:click="age++">Age + 1</button>
+        <!-- <button v-on:click="age--">Age - 1</button> -->
+
+        <!-- v directive shortcut -->
+        <button @click="age--">Age - 1</button>
+        <!-- <div @click="title = 'Moose Toes!' ">Change title</div> -->
+
+        <!-- same as above using a method in app.js (no args) -->
+        <!-- <div @click="changeTitle">Change title</div> -->
+
+        <!-- same as above using a method in app.js (args passed) -->
+        <div @click="changeTitle('Knuckles are fabulous!')">Change title</div>
+
+        <!-- v-show uses css (display:none) -->
+        <div v-show="showBooks">currently showing books</div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
