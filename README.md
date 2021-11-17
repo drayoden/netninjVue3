@@ -12,10 +12,10 @@
     - suspense component - handles async, provide fallback content i.e. spinner, progress bar, etc.
     - typescript support - optional
   - vscode: liveserver, vetur (Vue tooling), material icons (optional)
-- 02 - basics part 1
-  - use the CDN to insert/inject a component into a site, see docs
-  - creating a vue app
-  - data and templates
-  - click events
-  - conditional rendering, see showBooks, v-if, v-else, v-show directives, etc. (expensive)
-    - v-if,v-else removes/injects to the DOM as needed, v-show uses css (display: none;) to hide an element (less expensive)
+- 03 - basics part 2
+  - other mouse events
+  - output lists, replace single book with an array of books in data (app.js)
+  - attribute binding, bind dynamic values to html attribute, i.e. an 'href' attribute can be dynamic.
+  - dynamic classes (css)
+  - toggle css classes (isFav)
+  - computed properties; way to define a data property that is dependent on other data. i.e. a 'filtered' set of books is dependent on the books array (app.js). See filteredBooks function used to display isFav books.

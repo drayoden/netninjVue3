@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Vue</title>
     <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        body {
+            background: #eee;
+            margin: 20px auto;
+        }
+        .box {
+            padding: 100px 0;
+            width: 400px;
+            text-align: center;
+            background: #ddd;
+            margin: 20px;
+            display: inline-block;
+        }
+        li {
+            list-style-type: none;
+            background: #fff;
+            margin: 20px auto;
+            padding: 10px 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        li.fav {
+            background: #ff9ed2
+        }
+    </style>
 </head>
 <body>
     <h1>Hello Vuejs!</h1>
@@ -14,7 +41,17 @@
         
         <!-- v-if directive (conditional) -->
         <div v-if="showBooks">
-            <p>{{ title }} -- {{ author }} -- {{ age }}</p> 
+            <ul>
+                <!-- cycle the books array in app.js with v-for directive -->
+                <!-- <li @click="tFav(book)" v-for="book in books" :class="{fav: book.isFav}"> -->
+                <li @click="tFav(book)" v-for="book in filteredBooks" :class="{fav: book.isFav}">                    
+                    <h3>{{ book.title }}</h3>
+                    <p>{{ book.author }}</p>
+                    <img :src="book.img" :alt="book.title" width="150">
+                </li>
+            </ul>
+            <!-- replaced below with the v-for above; loops through books array in app.js -->
+            <!-- <p>{{ title }} -- {{ author }} -- {{ age }}</p>  -->
         </div>
         
         <!-- v-if, v-else -->
@@ -24,22 +61,25 @@
             <span v-else>Show</span>
         </button>
 
-        <!-- v-on is a 'directive' using the click event -->
-        <button v-on:click="age++">Age + 1</button>
-        <!-- <button v-on:click="age--">Age - 1</button> -->
+        <br>
 
-        <!-- v directive shortcut -->
-        <button @click="age--">Age - 1</button>
-        <!-- <div @click="title = 'Moose Toes!' ">Change title</div> -->
+        <!-- v-bind directive to bind to an attribute -->
+        <!-- <a v-bind:href="url">Newleaf</a> -->
+        <!-- v-bind shortcut -->
+        <a :href="url">Newleaf</a>
 
-        <!-- same as above using a method in app.js (no args) -->
-        <!-- <div @click="changeTitle">Change title</div> -->
+        <br>
 
-        <!-- same as above using a method in app.js (args passed) -->
-        <div @click="changeTitle('Knuckles are fabulous!')">Change title</div>
+        <!-- mouse events -->
 
-        <!-- v-show uses css (display:none) -->
-        <div v-show="showBooks">currently showing books</div>
+        <!-- passing data to handleEvent in mouseover: -->
+        <p>See mouse events in dev tools console... </p>
+        <div class="box" @mouseover="handleEvent($event,'Mooses!')" >mouseover</div>
+        <div class="box" @mouseleave="handleEvent">mouseleave</div>
+        <div class="box" @dblclick="handleEvent">double click</div>
+        <div class="box" @mousemove="handleMousemove">pos: {{x}}, {{y}}</div>
+
+
 
     </div>
 
