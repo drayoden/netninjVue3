@@ -36,14 +36,16 @@
   - multiple components
     - App.vue (root component) - just like the react (App.js) structure. 
     - you may have other components nested under the root (children):
-              
-              App.vue
-             /   |   \
-    Header.vue   |    Footer.vue
-            Article.vue
-            /         \
-    Content.vue    Comments.vue         
     
+             
+    `            App.vue            `
+    `           /   |   \           `
+    `  Header.vue   |    Footer.vue `
+    `          Article.vue          `
+    `          /         \          `
+    `  Content.vue    Comments.vue  `         
+    
+
     - deleted /components/HellowWorld.vue
     - created /components/Modal.vue -- not required, can be anywhere. just following the default structure for now.
       - import the Modal component into the App (root) component, register it in the 'export' and add it to the template '<Modal />'
