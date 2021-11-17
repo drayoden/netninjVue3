@@ -37,13 +37,14 @@
     - App.vue (root component) - just like the react (App.js) structure. 
     - you may have other components nested under the root (children):
     
-             
-    `            App.vue            `
-    `           /   |   \           `
-    `  Header.vue   |    Footer.vue `
-    `          Article.vue          `
-    `          /         \          `
-    `  Content.vue    Comments.vue  `         
+    ```         
+               App.vue            
+             /   |   \           
+    Header.vue   |    Footer.vue 
+            Article.vue         
+            /         \          
+    Content.vue    Comments.vue           
+    ```
     
 
     - deleted /components/HellowWorld.vue
