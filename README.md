@@ -12,46 +12,16 @@
     - suspense component - handles async, provide fallback content i.e. spinner, progress bar, etc.
     - typescript support - optional
   - vscode: liveserver, vetur (Vue tooling), material icons (optional)
-- 04 - Vue CLI and bigger projects
-  - so far we have only controlled a part of the page. now we look at creating full web sites; multiple components and routes, etc.
-  - we use the CLI to start building a full Vue website, aka SPA. We can then use modern JS features, live dev server, optimize code for production
-  - requirements: node.js, use npm to install the Vue CLI -- `sudo npm install -g @vue/cli` -- this installs globally ('-g-') so you need to use 'sudo'
-  - NOTE: purged all files to start a new project, except for README.md.
-  - Vue prompts:
-    - `create project in current directory?`  -- y
-    - Manually select features
-      - `choose Vue version`
-      - `babel`
-      - deselect `Linter/Formatter`  -> Enter
-    - select `3.x` -> Enter
-    - select `in dedicated config files`
-    - `save this as preset...` -- n
-  - creates all the regular files/folders; node_modules, public/, src/, package files, .gitignore and others.
-    - /public/index.html -> see the 'id="app"' -> where our code is injected.
-    - /src/main.js -> the kickstart file that uses the id="app" to inject our code and uses (imports) the App.vue file.
-    - /src/App.vue -> template, script and style sections. All vue files (components) must have at least the template section
-  - run the dev server: `npm run serve` -- 'serve' referrs to the 'script' inside package.json 
-  - template refs
-    - see handleClick method, references the input field with ref="name" -> this.$refs.name
-  - multiple components
-    - App.vue (root component) - just like the react (App.js) structure. 
-    - you may have other components nested under the root (children):
-    
-    ```         
-               App.vue            
-             /   |   \           
-    Header.vue   |    Footer.vue 
-            Article.vue         
-            /         \          
-    Content.vue    Comments.vue           
-    ```
-    
-
-    - deleted /components/HellowWorld.vue
-    - created /components/Modal.vue -- not required, can be anywhere. just following the default structure for now.
-      - import the Modal component into the App (root) component, register it in the 'export' and add it to the template '<Modal />'
-
-
-  
+- 05 - Vue CLI and bigger projects part 2 
+  - scoped and global styles, all styles so far have been global
+  - use 'scoped' in the <style> sections -> performance hit due to all of the data attributes created.
+  - could just make the selectors more specific.
+  - could create a /assets/global.css -> import it in main.js
+  - props - just like react - pass data to component from parent component. see header, content, theme props passed to Modal.vue from App.vue
+  - emit custom events - show/hide the modal - see showModal property and the custom event 'close'
+  - event modifiers - prevent the modal from closing when you click the modal -- restrict the 'backdrop' element to click on it's self and not a child -- use a click event modifier, i.e.:  @click.right (right-click) -- intellisense will list when you type '@click.' -- used @click.self on the 'backdrop' element! 
+  - slots -- what if we wanted to pass an entire form (template) into the Modal component? see Modal.vue -> '<slot></slot>' and App.vue where the template is defined. note 'named' slots -> links.
+  - another modal
+  - teleport: vue3 -> teleport component -> teleport content to a different location in the DOM even outside the scope of vue (id="app")
 
 
