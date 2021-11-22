@@ -12,3 +12,14 @@
     - suspense component - handles async, provide fallback content i.e. spinner, progress bar, etc.
     - typescript support - optional
   - vscode: liveserver, vetur (Vue tooling), material icons (optional)
+07 - Forms & Inputs
+  - create new proj: `vue create .` -- same options as before: manual, x-Linter, 3x, dedicated file, x-preset, Enter.
+  - delete all 'HelloWorld' stuff - vue file, App.vue: template, imports, components.
+  - create simple form/input for email
+  - 2-way data binding -- every character typed into the email field updates the email: property (v-model)
+  - select properties -- v-model as well
+  - check boxes -- v-model also, magic!
+  - keyboard events -- place each skill into the skills array but clear the input field when a comma; ',' is typed. see v-for in the 'skills' input field
+  - delete skill -- use @click on each skill element to fire 'deleteMe' - use filter to get new array.
+  - submit forms -- validate password, submit to console.
+    - normal submit behavior is to reset the page, we want to prevent that with vue. see 'form' @submit.prevent, submitForm method - prevents default behavior and the data can be verified before submitting 
