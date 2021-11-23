@@ -12,7 +12,7 @@
     - suspense component - handles async, provide fallback content i.e. spinner, progress bar, etc.
     - typescript support - optional
   - vscode: liveserver, vetur (Vue tooling), material icons (optional)
-08 - Vue router
+- 08 - Vue router
   - so far just a root comp (app) with child comp. Now we want to have multiple pages i.e. about, porfolio, etc.
   - setup -- use the vue cli to setup routing for us:
     - manually, +-router, x-linter, 3.x, +-router history mode, +-dedicated config file, x-preset
