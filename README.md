@@ -12,7 +12,7 @@
     - suspense component - handles async, provide fallback content i.e. spinner, progress bar, etc.
     - typescript support - optional
   - vscode: liveserver, vetur (Vue tooling), material icons (optional)
-07 - Forms & Inputs
+- 07 - Forms & Inputs
   - create new proj: `vue create .` -- same options as before: manual, x-Linter, 3x, dedicated file, x-preset, Enter.
   - delete all 'HelloWorld' stuff - vue file, App.vue: template, imports, components.
   - create simple form/input for email
