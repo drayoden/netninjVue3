@@ -1,0 +1,9 @@
+{
+    "jobs": [
+        {"title": "Mouser", "id": 1, "details": "Mouser details..."},
+        {"title": "Meower", "id": 12, "details": "Meower details..."},
+        {"title": "Murrer", "id": 35, "details": "Murrer details..."},
+        {"title": "Purrer", "id": 467, "details": "Purrer details..."},
+        {"title": "Squinkiss", "id": 53, "details": "Squinkiss details..."}
+    ]
+}
