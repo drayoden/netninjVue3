@@ -12,7 +12,7 @@
     - suspense component - handles async, provide fallback content i.e. spinner, progress bar, etc.
     - typescript support - optional
   - vscode: liveserver, vetur (Vue tooling), material icons (optional)
-09 - fetching data -- using JSON server
+- 09 - fetching data -- using JSON server
   - install the JSON server: `npm install json-server` -- not package.json
   - run the JSON server: `json-server --watch <path>/db.json` -- VERY COOL! 
   - 
