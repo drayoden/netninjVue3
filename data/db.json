@@ -1,0 +1,25 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "Welcome to the fuzziest blog of all time!",
+            "body": "Lorem id1 ipsum dolor sit amet consectetur, adipisicing elit. Iusto at possimus ullam obcaecati dignissimos impedit sit!",
+            "tags": [
+                "fuzz", 
+                "toes",
+                "nose"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Welcome to serious business!",
+            "body": "Iusto at possimus ullam obcaecati dignissimos impedit sit! Similique, neque eum nulla tenetur nesciunt sit at qui numquam...",
+            "tags": [
+                "knuckles", 
+                "forrest",
+                "tiny"
+            ]
+
+        }
+    ]
+}

@@ -12,18 +12,12 @@
     - suspense component - handles async, provide fallback content i.e. spinner, progress bar, etc.
     - typescript support - optional
   - vscode: liveserver, vetur (Vue tooling), material icons (optional)
-- 10 - composition API part 1
-  - so far we have been using the 'options API', i.e. in side the component we export data, methods, computed, and lifecycle hooks. 
-  - composition API -- groups all of the above into a setup function. larger projects are more suited for the composition API: organization, code reuse, complex logic, etc. (auth, databases)
-  - create new proj: `manually, +Router, -linter, 3x, router history, dedicated config, -save presets` -- remove Hello World (all), About route/files
-  - use the setup() hook
-  - template refs
-  - Refs vs Reactive -- NOTE: created multiple versions of Home.vue: HomeA.vue & HomeB.vue.
-    - HomeA.vue has the setup hook for sections 'template refs' & 'refs for reactivity'
-    - HomeB.vue has the setup hook for sections 'refs vs reactive' 
-  - which one is better?  -- this is dumb, the whole reactive 'thing' just seems like a waste of time!
-    - reactive: cannot use primitive values
-    - refs: can use primitive values, will work with external composition funtions. used from this point on...
-  - computed values -- HomeC.vue for 'computed values' section
-  - watch & watchEffect -- HomeC.vue 
-    - 
+- 11 - composition API part 2
+  - using props in setup()
+  - using lifecycle hooks inside setup(), we import from vue and the names change from 'mounted' to 'onmounted' or 'updated' to 'onupdated', etc. see PostList.vue
+  - fetching data in setup() -- created /data/db.json file and installed the json-server, created HomeB.vue to 'fetch' data inside setup.
+  - reusable composable functions -- scenario: very big app with loads of components and we want to use the same data that is 'fetched' inside the setup many times in the various components thus you would have to repeat the setup code in each of the many components to make it work -- not very efficient!
+    - place the code into it's own function/file and import where ever it is needed.
+    - created /src/composables/getPosts.js (note a JS file not a vue file!) and populate with the contents of the Home.vue setup() funtion -> HomeC.vue
+    - also output the tags in SinglePost.vue to get the tags in db.json
+  - create a details component; a route for the compoent, shows the entire 'body' not just the snippit. created /views/Details.vue, /src/composables/getPost.js and use the getPost function inside Details.vue
